@@ -49,6 +49,7 @@
 //        }
 //    };
     
+    // Use old style intiialization
     NSMutableDictionary *takeOffOptions = [NSMutableDictionary new];
     NSMutableDictionary *airshiptOptionsConfigKey = [NSMutableDictionary new];
     
