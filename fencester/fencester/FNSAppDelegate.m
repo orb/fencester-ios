@@ -17,6 +17,9 @@
 
 @implementation FNSAppDelegate
 
+@synthesize tabBarController;
+@synthesize window;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -30,21 +33,33 @@
         viewController2 = [[FNSSecondViewController alloc] initWithNibName:@"FNSSecondViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil]; 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
     
     //Init Airship launch options
-    NSDictionary* takeOffOptions =
-    @{
-        UAirshipTakeOffOptionsLaunchOptionsKey:launchOptions ? launchOptions : @{},
-        UAirshipTakeOffOptionsAirshipConfigKey: @{
-            @"DEVELOPMENT_APP_KEY": @"dL3-GcxfRWCROH9Frwj7Gg",
-            @"DEVELOPMENT_APP_SECRET": @"wahU43hySDKyfO8yKLcZgQ",
-            @"APP_STORE_OR_AD_HOC_BUILD": @"NO",
-        }
-    };
+//    NSDictionary* takeOffOptions =
+//    @{
+//        UAirshipTakeOffOptionsLaunchOptionsKey:launchOptions ? launchOptions : @{},
+//        UAirshipTakeOffOptionsAirshipConfigKey: @{
+//            @"DEVELOPMENT_APP_KEY": @"dL3-GcxfRWCROH9Frwj7Gg",
+//            @"DEVELOPMENT_APP_SECRET": @"wahU43hySDKyfO8yKLcZgQ",
+//            @"APP_STORE_OR_AD_HOC_BUILD": @"NO",
+//        }
+//    };
+    
+    NSMutableDictionary *takeOffOptions = [NSMutableDictionary new];
+    NSMutableDictionary *airshiptOptionsConfigKey = [NSMutableDictionary new];
+    
+    //airship configs
+    [airshiptOptionsConfigKey setValue: @"dL3-GcxfRWCROH9Frwj7Gg" forKey: @"DEVELOPMENT_APP_KEY"];
+    [airshiptOptionsConfigKey setValue: @"wahU43hySDKyfO8yKLcZgQ" forKey: @"DEVELOPMENT_APP_SECRET"];
+    [airshiptOptionsConfigKey setValue: @"NO" forKey: @"APP_STORE_OR_AD_HOC_BUILD"];
+    
+    //Take off options
+    [takeOffOptions setValue: [NSDictionary new] forKey: UAirshipTakeOffOptionsLaunchOptionsKey];
+    [takeOffOptions setValue: airshiptOptionsConfigKey forKey: UAirshipTakeOffOptionsAirshipConfigKey];
     
         
     [UAirship takeOff:takeOffOptions];        
