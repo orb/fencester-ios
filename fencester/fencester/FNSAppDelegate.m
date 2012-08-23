@@ -14,13 +14,13 @@
 #import "FNSFirstViewController.h"
 #import "FNSSecondViewController.h"
 
+static const int kLocationRequest = 10001;
+
 //Private Interface declaration
 @interface FNSAppDelegate ()
 {
     NSData *ourDevToken;
 }
-
-
 @end
 
 
@@ -87,14 +87,47 @@
     NSLog(@"GOT %@", userInfo);
     NSDictionary* aps = [userInfo objectForKey:@"aps"];
     
-    if (aps) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"push!"
-                                                        message:[aps objectForKey:@"alert"]
+    if (aps) {        
+        NSString* msg = [aps objectForKey:@"alert"];
+        
+        NSRange locationPrefix = [msg rangeOfString:@"location:"];
+        if (locationPrefix.location== 0) {
+            msg = [msg stringByReplacingCharactersInRange:locationPrefix withString:@""];
+            NSArray* parts = [msg componentsSeparatedByString:@"|"];
+            if ([parts count] ==2) {            
+                NSString* loc = [parts objectAtIndex:0];
+                NSString* who = [parts objectAtIndex:1];
+                            
+                [self monitor:loc for:who];
+                return;
+            }
+        }
+        
+        NSRange checkinPrefix = [msg rangeOfString:@"checkin:"];
+        if (checkinPrefix.location== 0) {
+            msg = [msg stringByReplacingCharactersInRange:checkinPrefix withString:@""];
+            NSArray* parts = [msg componentsSeparatedByString:@"|"];
+            if ([parts count] ==2) {
+                NSString* loc = [parts objectAtIndex:0];
+                NSString* who = [parts objectAtIndex:1];
+                
+                [self checkin:loc for:who];
+                return;
+            }
+        }
+        
+    
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"unhandled message"
+                                                        message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"ok"
                                               otherButtonTitles:nil];
         [alert show];
     }
+
+
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -129,6 +162,30 @@
     return [FBSession.activeSession handleOpenURL:url];
 }
 
+
+-(void) alertView:(UIAlertView*)view clickedButtonAtIndex:(NSInteger)index {
+    NSLog(@"alert");
+}
+
+
+
+-(void) checkin:(NSString*) location for:(NSString*) who {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Check in"
+                                                    message: [NSString stringWithFormat:@"%@ is now at %@", who, location]
+                                                   delegate:self
+                                          cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+-(void) monitor:(NSString*) location for:(NSString*) who {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Location request"
+                                                    message: [NSString stringWithFormat:@"We will let %@ know when you get to %@", who, location]
+                                                   delegate:self
+                                          cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 
 
