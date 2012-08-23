@@ -41,6 +41,8 @@
 		94D97F4915E68B99007265AF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97F4815E68B99007265AF /* CoreTelephony.framework */; };
 		94D97F4B15E68BA1007265AF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97F4A15E68BA1007265AF /* StoreKit.framework */; };
 		94D97F4D15E68BDE007265AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97F4C15E68BDE007265AF /* CoreLocation.framework */; };
+		94D97F4F15E690D7007265AF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97F4E15E690D7007265AF /* FacebookSDK.framework */; };
+		94D97F5115E6915A007265AF /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94D97F5015E6915A007265AF /* FacebookSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		94D97F4815E68B99007265AF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		94D97F4A15E68BA1007265AF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		94D97F4C15E68BDE007265AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		94D97F4E15E690D7007265AF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		94D97F5015E6915A007265AF /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 				94D97E7115E685AF007265AF /* CoreGraphics.framework in Frameworks */,
 				94D97F3415E68676007265AF /* libUAirship-1.3.2.a in Frameworks */,
 				94D97F3515E68676007265AF /* libUAirshipPush-1.3.2.a in Frameworks */,
+				94D97F4F15E690D7007265AF /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +224,7 @@
 		94D97E5D15E685AF007265AF = {
 			isa = PBXGroup;
 			children = (
-				94D97F4C15E68BDE007265AF /* CoreLocation.framework */,
+				94D97F5015E6915A007265AF /* FacebookSDKResources.bundle */,
 				94D97EB615E68676007265AF /* Airship */,
 				94D97E7215E685AF007265AF /* fencester */,
 				94D97EA415E685AF007265AF /* fencesterTests */,
@@ -240,6 +245,8 @@
 		94D97E6B15E685AF007265AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94D97F4C15E68BDE007265AF /* CoreLocation.framework */,
+				94D97F4E15E690D7007265AF /* FacebookSDK.framework */,
 				94D97F4A15E68BA1007265AF /* StoreKit.framework */,
 				94D97F4815E68B99007265AF /* CoreTelephony.framework */,
 				94D97F4615E68B8F007265AF /* libsqlite3.dylib */,
@@ -586,6 +593,7 @@
 				94D97E9115E685AF007265AF /* FNSFirstViewController_iPad.xib in Resources */,
 				94D97E9415E685AF007265AF /* FNSSecondViewController_iPhone.xib in Resources */,
 				94D97E9715E685AF007265AF /* FNSSecondViewController_iPad.xib in Resources */,
+				94D97F5115E6915A007265AF /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +713,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -733,7 +741,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -752,7 +760,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = fencester/fencester.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = "Airship/**";
@@ -762,7 +775,8 @@
 					"\"$(SRCROOT)/Airship\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9766C89-D861-4457-A829-FBF19581259E";
+				PROVISIONING_PROFILE = "2F184DA2-CD44-40AB-B6E9-CB30575B7F4A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -771,7 +785,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = fencester/fencester.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = "Airship/**";
@@ -781,7 +800,8 @@
 					"\"$(SRCROOT)/Airship\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9766C89-D861-4457-A829-FBF19581259E";
+				PROVISIONING_PROFILE = "2F184DA2-CD44-40AB-B6E9-CB30575B7F4A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -839,6 +859,7 @@
 				94D97EB115E685AF007265AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94D97EB215E685AF007265AF /* Build configuration list for PBXNativeTarget "fencesterTests" */ = {
 			isa = XCConfigurationList;
@@ -847,6 +868,7 @@
 				94D97EB415E685AF007265AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,12 +6,14 @@
 //  Copyright (c) 2012 hackday. All rights reserved.
 //
 
+#import <FacebookSDK/FacebookSDK.h>
+#import "UAirship.h"
+#import "UAPush.h"
+
 #import "FNSAppDelegate.h"
 #import "FNSFirstViewController.h"
 #import "FNSSecondViewController.h"
 
-#import "UAirship.h"
-#import "UAPush.h"
 
 @implementation FNSAppDelegate
 
@@ -96,7 +98,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [FBSession.activeSession close];
     [UAirship land];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    return [FBSession.activeSession handleOpenURL:url];
 }
 
 

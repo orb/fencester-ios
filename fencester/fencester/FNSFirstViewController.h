@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FNSFirstViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
