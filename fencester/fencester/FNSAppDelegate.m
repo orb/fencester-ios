@@ -47,17 +47,6 @@
     [self.window makeKeyAndVisible];
     
     
-    //Init Airship launch options
-//    NSDictionary* takeOffOptions =
-//    @{
-//        UAirshipTakeOffOptionsLaunchOptionsKey:launchOptions ? launchOptions : @{},
-//        UAirshipTakeOffOptionsAirshipConfigKey: @{
-//            @"DEVELOPMENT_APP_KEY": @"dL3-GcxfRWCROH9Frwj7Gg",
-//            @"DEVELOPMENT_APP_SECRET": @"wahU43hySDKyfO8yKLcZgQ",
-//            @"APP_STORE_OR_AD_HOC_BUILD": @"NO",
-//        }
-//    };
-    
     //Config Dictionarys
     NSMutableDictionary *takeOffOptions = [NSMutableDictionary new];
     NSMutableDictionary *airshiptOptionsConfigKey = [NSMutableDictionary new];
@@ -74,6 +63,10 @@
         
     [UAirship takeOff:takeOffOptions];        
     [[UAPush shared] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert)];
+    
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.delegate = self;
+    
     return YES;
 }
 
@@ -81,8 +74,7 @@
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     NSLog(@"registered - got %@", devToken);
     ourDevToken = devToken;
-    [[UAPush shared] registerDeviceToken:devToken];
-    
+    [[UAPush shared] registerDeviceToken:devToken];    
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
@@ -136,6 +128,8 @@
     
     return [FBSession.activeSession handleOpenURL:url];
 }
+
+
 
 
 @end

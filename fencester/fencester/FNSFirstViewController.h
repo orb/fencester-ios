@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FNSFirstViewController : UIViewController
+#import <CoreLocation/CoreLocation.h>
+
+@interface FNSFirstViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 

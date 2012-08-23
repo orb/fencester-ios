@@ -12,13 +12,19 @@
 #import "UAPush.h"
 
 @interface FNSFirstViewController ()
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *lastLocation;
+
+
 @end
 
 @implementation FNSFirstViewController
+
 @synthesize nameLabel;
 @synthesize locationLabel;
 @synthesize locationManager = _locationManager;
+@synthesize lastLocation;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,7 +48,6 @@
     [self setNameLabel:nil];
     [self setLocationLabel:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -56,6 +61,7 @@
 
 
 #pragma mark location
+
 // Delegate method from the CLLocationManagerDelegate protocol.
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
@@ -63,15 +69,124 @@
 {
     NSLog(@"old=%@ new= %@", oldLocation, newLocation);
     
-    self.locationLabel.text = [NSString stringWithFormat:@"latitude %+.6f, longitude %+.6f\n",
+    
+    self.locationLabel.text = [NSString stringWithFormat:@"[%d] %+.6f %+.6f\n",
+                               [[self.locationManager monitoredRegions] count],
                       newLocation.coordinate.latitude,
                       newLocation.coordinate.longitude];
     
+    
+    self.lastLocation = newLocation;
 }
 
+
+/*
+ *  locationManager:didEnterRegion:
+ *
+ *  Discussion:
+ *    Invoked when the user enters a monitored region.  This callback will be invoked for every allocated
+ *    CLLocationManager instance with a non-nil delegate that implements this method.
+ */
+- (void)locationManager:(CLLocationManager *)manager
+         didEnterRegion:(CLRegion *)region
+{
+    NSLog(@"ENTER %@", region);
+
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"EXIT"
+                                                    message:region.identifier
+                                                   delegate:self cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+/*
+ *  locationManager:didExitRegion:
+ *
+ *  Discussion:
+ *    Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
+ *    CLLocationManager instance with a non-nil delegate that implements this method.
+ */
+- (void)locationManager:(CLLocationManager *)manager
+          didExitRegion:(CLRegion *)region
+{
+    NSLog(@"EXIT %@", region);
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"ENTER"
+                                                    message:region.identifier
+                                                   delegate:self cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+};
+
+
+-(void) noFence {
+    for (CLRegion* region in [self.locationManager monitoredRegions]) {
+        [_locationManager stopMonitoringForRegion:region];        
+    }
+}
+
+-(void) installFence {
+    [self noFence];
+    //CLLocationDegrees radius = self.locationManager.maximumRegionMonitoringDistance;
+    
+    CLRegion* region1 = [[CLRegion alloc] initCircularRegionWithCenter:CLLocationCoordinate2DMake(30.265188, -97.747095)
+                                                               radius:10 // meters
+                                                           identifier:@"fbhack"];
+    CLRegion* region2 = [[CLRegion alloc] initCircularRegionWithCenter:lastLocation.coordinate
+                                                                radius:10 // meters
+                                                            identifier:@"startpoint"];
+
+    
+    [self.locationManager startMonitoringForRegion:region1
+                              desiredAccuracy:kCLLocationAccuracyBest];
+    
+    
+    [self.locationManager startMonitoringForRegion:region2
+                                   desiredAccuracy:kCLLocationAccuracyBest];
+    
+//
+//    [self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:
+//                                                                    CLLocationCoordinate2DMake(30.265300,-97.746265)
+//                                                                                           radius:10 // meters
+//                                                                                       identifier:@"austinjava-corner"]
+//                                   desiredAccuracy:kCLLocationAccuracyBest];
+//    
+//    [self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:
+//                                                    CLLocationCoordinate2DMake(30.265302,-97.746419)
+//                                                                                           radius:10 // meters
+//                                                                                       identifier:@""]          
+//                                   desiredAccuracy:kCLLocationAccuracyBest];
+//    
+//    [self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:
+//                                                    CLLocationCoordinate2DMake(30.265321,-97.746754)
+//                                                                                           radius:10 // meters
+//                                                                                       identifier:@"main-door"]
+//                                   desiredAccuracy:kCLLocationAccuracyBest];
+//    [self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:
+//                                                    
+//                                                    CLLocationCoordinate2DMake(30.265273,-97.747403)
+//                                                                                           radius:10 // meters
+//                                                                                       identifier:@"fns-door"]
+//                                   desiredAccuracy:kCLLocationAccuracyBest];
+//    [self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:
+//                                                    
+//                                                    CLLocationCoordinate2DMake(30.265184,-97.747561)
+//                                                                                           radius:10 // meters
+//                                                                                       identifier:@"fns-table"]
+//                                   desiredAccuracy:kCLLocationAccuracyBest];
+    
+    
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"REGISTERED!"
+                                                    message:@"WHEEE!"
+                                                   delegate:self cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+
 #pragma mark fbstuff
-
-
 
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState) state
@@ -131,8 +246,6 @@
 
 
 
-
-
 -(void) whoami {
     if (FBSession.activeSession.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
@@ -163,23 +276,28 @@
     [self openSession];
 }
 
+
 - (IBAction)locateAction:(id)sender {
-    NSLog(@"button2");
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
         
-        _locationManager.delegate = (id) self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-        
-        _locationManager.distanceFilter = 500;
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        //_locationManager.distanceFilter = 10;
         [_locationManager startUpdatingLocation];
         
         NSLog(@"START avail=%d enabled=%d", [CLLocationManager regionMonitoringAvailable], [CLLocationManager regionMonitoringEnabled]);
-        
+            
     } else {
         NSLog(@"...");
+        [self installFence];
     }
+    
+    
+    NSLog(@"I see %@", [_locationManager monitoredRegions]);
+
 
 }
+
 
 @end
