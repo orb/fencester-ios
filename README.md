@@ -1,0 +1,1 @@
+Stub for iOS client - facebook hack day project
