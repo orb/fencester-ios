@@ -29,6 +29,7 @@ static const int kLocationRequest = 10001;
 
 @synthesize tabBarController;
 @synthesize window;
+@synthesize currentLocationRequest;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -73,8 +74,7 @@ static const int kLocationRequest = 10001;
     [UAirship takeOff:takeOffOptions];        
     [[UAPush shared] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert)];
     
-//    self.locationManager = [[CLLocationManager alloc] init];
-//    self.locationManager.delegate = self;
+    self.currentLocationRequest = @"Nowhere";
     
     return YES;
 }

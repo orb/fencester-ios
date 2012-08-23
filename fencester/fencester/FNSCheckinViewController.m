@@ -7,12 +7,14 @@
 //
 
 #import "FNSCheckinViewController.h"
+#import "FNSAppDelegate.h"
 
 @interface FNSCheckinViewController ()
-
 @end
 
+
 @implementation FNSCheckinViewController
+@synthesize locationLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,18 +29,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.locationLabel.text = [[self app] currentLocationRequest];
+
 }
 
 - (void)viewDidUnload
 {
+    [self setLocationLabel:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+                                 
+       
+-(FNSAppDelegate*) app  {
+    return (FNSAppDelegate*) [[UIApplication sharedApplication] delegate];
+}
+                                 
+                                 
 
+- (IBAction)doCheckin:(id)sender {
+}
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FNSCheckinViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+- (IBAction)doCheckin:(id)sender;
 
 @end
