@@ -69,6 +69,7 @@
 		94D97EA815E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94D97EAA15E685AF007265AF /* fencesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fencesterTests.h; sourceTree = "<group>"; };
 		94D97EAB15E685AF007265AF /* fencesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fencesterTests.m; sourceTree = "<group>"; };
+		94D97EB515E685ED007265AF /* fencester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fencester.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +129,7 @@
 		94D97E7215E685AF007265AF /* fencester */ = {
 			isa = PBXGroup;
 			children = (
+				94D97EB515E685ED007265AF /* fencester.entitlements */,
 				94D97E7B15E685AF007265AF /* FNSAppDelegate.h */,
 				94D97E7C15E685AF007265AF /* FNSAppDelegate.m */,
 				94D97E7E15E685AF007265AF /* FNSFirstViewController.h */,
@@ -423,10 +425,13 @@
 		94D97EB015E685AF007265AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = fencester/fencester.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
 				INFOPLIST_FILE = "fencester/fencester-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9766C89-D861-4457-A829-FBF19581259E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -434,10 +439,13 @@
 		94D97EB115E685AF007265AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = fencester/fencester.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Norman Richards (QM32UEJ7XN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
 				INFOPLIST_FILE = "fencester/fencester-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9766C89-D861-4457-A829-FBF19581259E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
