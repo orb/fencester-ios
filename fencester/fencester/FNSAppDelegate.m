@@ -14,6 +14,15 @@
 #import "FNSFirstViewController.h"
 #import "FNSSecondViewController.h"
 
+//Private Interface declaration
+@interface FNSAppDelegate ()
+{
+    NSData *ourDevToken;
+}
+
+
+@end
+
 
 @implementation FNSAppDelegate
 
@@ -71,7 +80,9 @@
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     NSLog(@"registered - got %@", devToken);
+    ourDevToken = devToken;
     [[UAPush shared] registerDeviceToken:devToken];
+    
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {

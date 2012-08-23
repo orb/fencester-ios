@@ -9,6 +9,8 @@
 #import "FNSFirstViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+#import "UAPush.h"
+
 @interface FNSFirstViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
@@ -16,6 +18,7 @@
 @implementation FNSFirstViewController
 @synthesize nameLabel;
 @synthesize locationLabel;
+@synthesize locationManager = _locationManager;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -136,10 +139,17 @@
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
                  self.nameLabel.text = user.name;
+                 [self makeAirshipDevTokenOurFacebookUserID: user.id];
                  NSLog(@"user %@ %@", user.name, [user objectForKey:@"id"]);
              }
          }];
     }
+}
+
+#pragma devToken update
+-(void) makeAirshipDevTokenOurFacebookUserID: (NSString*) facebookUserID
+{
+    [[UAPush shared] setAlias: facebookUserID];
 }
 
 #pragma mark buttons
@@ -158,7 +168,7 @@
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
         
-        _locationManager.delegate = self;
+        _locationManager.delegate = (id) self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         
         _locationManager.distanceFilter = 500;
