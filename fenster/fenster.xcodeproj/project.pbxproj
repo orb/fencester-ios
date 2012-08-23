@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94D97DDA15E6848F007265AF /* fenster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fenster.entitlements; sourceTree = "<group>"; };
 		94E75B4B15E6822C0085EFD9 /* fenster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fenster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E75B4F15E6822C0085EFD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94E75B5115E6822C0085EFD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +129,7 @@
 		94E75B5515E6822C0085EFD9 /* fenster */ = {
 			isa = PBXGroup;
 			children = (
+				94D97DDA15E6848F007265AF /* fenster.entitlements */,
 				94E75B5E15E6822C0085EFD9 /* FNSAppDelegate.h */,
 				94E75B5F15E6822C0085EFD9 /* FNSAppDelegate.m */,
 				94E75B6115E6822C0085EFD9 /* FNSFirstViewController.h */,
@@ -423,6 +425,7 @@
 		94E75B9315E6822C0085EFD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = fenster/fenster.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fenster/fenster-Prefix.pch";
 				INFOPLIST_FILE = "fenster/fenster-Info.plist";
@@ -434,6 +437,7 @@
 		94E75B9415E6822C0085EFD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = fenster/fenster.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fenster/fenster-Prefix.pch";
 				INFOPLIST_FILE = "fenster/fenster-Info.plist";
@@ -495,6 +499,7 @@
 				94E75B9415E6822C0085EFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94E75B9515E6822C0085EFD9 /* Build configuration list for PBXNativeTarget "fensterTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +508,7 @@
 				94E75B9715E6822C0085EFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
