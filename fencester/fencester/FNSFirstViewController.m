@@ -10,7 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FNSFirstViewController ()
-
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation FNSFirstViewController
@@ -49,6 +49,21 @@
     } else {
         return YES;
     }
+}
+
+
+#pragma mark location
+// Delegate method from the CLLocationManagerDelegate protocol.
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"old=%@ new= %@", oldLocation, newLocation);
+    
+    self.locationLabel.text = [NSString stringWithFormat:@"latitude %+.6f, longitude %+.6f\n",
+                      newLocation.coordinate.latitude,
+                      newLocation.coordinate.longitude];
+    
 }
 
 #pragma mark fbstuff
@@ -140,6 +155,20 @@
 
 - (IBAction)locateAction:(id)sender {
     NSLog(@"button2");
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        
+        _locationManager.distanceFilter = 500;
+        [_locationManager startUpdatingLocation];
+        
+        NSLog(@"START avail=%d enabled=%d", [CLLocationManager regionMonitoringAvailable], [CLLocationManager regionMonitoringEnabled]);
+        
+    } else {
+        NSLog(@"...");
+    }
 
 }
 
