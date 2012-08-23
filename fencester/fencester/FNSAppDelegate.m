@@ -13,6 +13,7 @@
 #import "FNSAppDelegate.h"
 #import "FNSFirstViewController.h"
 #import "FNSSecondViewController.h"
+#import "FNSCheckinViewController.h"
 
 static const int kLocationRequest = 10001;
 
@@ -33,16 +34,24 @@ static const int kLocationRequest = 10001;
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
+    UIViewController *viewController1;
+    UIViewController *viewController2;
+    UIViewController *viewController3;
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[FNSFirstViewController alloc] initWithNibName:@"FNSFirstViewController_iPhone" bundle:nil];
         viewController2 = [[FNSSecondViewController alloc] initWithNibName:@"FNSSecondViewController_iPhone" bundle:nil];
+        viewController3 = [[FNSCheckinViewController alloc] initWithNibName:@"FNSCheckinViewController_iPhone" bundle:nil];
     } else {
         viewController1 = [[FNSFirstViewController alloc] initWithNibName:@"FNSFirstViewController_iPad" bundle:nil];
-        viewController2 = [[FNSSecondViewController alloc] initWithNibName:@"FNSSecondViewController_iPad" bundle:nil];
+        viewController2 = [[FNSSecondViewController alloc] initWithNibName:@"FNSSecongController_iPad" bundle:nil];
+        viewController3 = [[FNSCheckinViewController alloc] initWithNibName:@"FNSCheckinViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil]; 
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1,
+                                                                      viewController2,
+                                                                      viewController3,
+                                                                      nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     

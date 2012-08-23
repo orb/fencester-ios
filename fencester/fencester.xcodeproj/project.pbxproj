@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94602F8815E6E7CB00D06A28 /* FNSCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94602F8715E6E7CB00D06A28 /* FNSCheckinViewController.m */; };
+		94602F8B15E6E7F300D06A28 /* FNSCheckinViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94602F8A15E6E7F200D06A28 /* FNSCheckinViewController_iPhone.xib */; };
+		94602F8D15E6E85000D06A28 /* FNSCheckinViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94602F8C15E6E85000D06A28 /* FNSCheckinViewController_iPad.xib */; };
 		94D97E6D15E685AF007265AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6C15E685AF007265AF /* UIKit.framework */; };
 		94D97E6F15E685AF007265AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6E15E685AF007265AF /* Foundation.framework */; };
 		94D97E7115E685AF007265AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E7015E685AF007265AF /* CoreGraphics.framework */; };
@@ -56,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94602F8615E6E7CB00D06A28 /* FNSCheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNSCheckinViewController.h; sourceTree = "<group>"; };
+		94602F8715E6E7CB00D06A28 /* FNSCheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNSCheckinViewController.m; sourceTree = "<group>"; };
+		94602F8A15E6E7F200D06A28 /* FNSCheckinViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNSCheckinViewController_iPhone.xib; sourceTree = "<group>"; };
+		94602F8C15E6E85000D06A28 /* FNSCheckinViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNSCheckinViewController_iPad.xib; sourceTree = "<group>"; };
 		94D97E6815E685AF007265AF /* fencester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fencester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D97E6C15E685AF007265AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94D97E6E15E685AF007265AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -271,6 +278,8 @@
 				94D97EB515E685ED007265AF /* fencester.entitlements */,
 				94D97E7B15E685AF007265AF /* FNSAppDelegate.h */,
 				94D97E7C15E685AF007265AF /* FNSAppDelegate.m */,
+				94602F8615E6E7CB00D06A28 /* FNSCheckinViewController.h */,
+				94602F8715E6E7CB00D06A28 /* FNSCheckinViewController.m */,
 				94D97E7E15E685AF007265AF /* FNSFirstViewController.h */,
 				94D97E7F15E685AF007265AF /* FNSFirstViewController.m */,
 				94D97E8115E685AF007265AF /* first.png */,
@@ -283,6 +292,8 @@
 				94D97E8F15E685AF007265AF /* FNSFirstViewController_iPad.xib */,
 				94D97E9215E685AF007265AF /* FNSSecondViewController_iPhone.xib */,
 				94D97E9515E685AF007265AF /* FNSSecondViewController_iPad.xib */,
+				94602F8A15E6E7F200D06A28 /* FNSCheckinViewController_iPhone.xib */,
+				94602F8C15E6E85000D06A28 /* FNSCheckinViewController_iPad.xib */,
 				94D97E7315E685AF007265AF /* Supporting Files */,
 			);
 			path = fencester;
@@ -594,6 +605,8 @@
 				94D97E9415E685AF007265AF /* FNSSecondViewController_iPhone.xib in Resources */,
 				94D97E9715E685AF007265AF /* FNSSecondViewController_iPad.xib in Resources */,
 				94D97F5115E6915A007265AF /* FacebookSDKResources.bundle in Resources */,
+				94602F8B15E6E7F300D06A28 /* FNSCheckinViewController_iPhone.xib in Resources */,
+				94602F8D15E6E85000D06A28 /* FNSCheckinViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +645,7 @@
 				94D97E7D15E685AF007265AF /* FNSAppDelegate.m in Sources */,
 				94D97E8015E685AF007265AF /* FNSFirstViewController.m in Sources */,
 				94D97E8715E685AF007265AF /* FNSSecondViewController.m in Sources */,
+				94602F8815E6E7CB00D06A28 /* FNSCheckinViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
