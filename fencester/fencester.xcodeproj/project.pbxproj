@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94D97E6D15E685AF007265AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6C15E685AF007265AF /* UIKit.framework */; };
+		94D97E6F15E685AF007265AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6E15E685AF007265AF /* Foundation.framework */; };
+		94D97E7115E685AF007265AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E7015E685AF007265AF /* CoreGraphics.framework */; };
+		94D97E7715E685AF007265AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E7515E685AF007265AF /* InfoPlist.strings */; };
+		94D97E7915E685AF007265AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D97E7815E685AF007265AF /* main.m */; };
+		94D97E7D15E685AF007265AF /* FNSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D97E7C15E685AF007265AF /* FNSAppDelegate.m */; };
+		94D97E8015E685AF007265AF /* FNSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D97E7F15E685AF007265AF /* FNSFirstViewController.m */; };
+		94D97E8215E685AF007265AF /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8115E685AF007265AF /* first.png */; };
+		94D97E8415E685AF007265AF /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8315E685AF007265AF /* first@2x.png */; };
+		94D97E8715E685AF007265AF /* FNSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D97E8615E685AF007265AF /* FNSSecondViewController.m */; };
+		94D97E8915E685AF007265AF /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8815E685AF007265AF /* second.png */; };
+		94D97E8B15E685AF007265AF /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8A15E685AF007265AF /* second@2x.png */; };
+		94D97E8E15E685AF007265AF /* FNSFirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8C15E685AF007265AF /* FNSFirstViewController_iPhone.xib */; };
+		94D97E9115E685AF007265AF /* FNSFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E8F15E685AF007265AF /* FNSFirstViewController_iPad.xib */; };
+		94D97E9415E685AF007265AF /* FNSSecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E9215E685AF007265AF /* FNSSecondViewController_iPhone.xib */; };
+		94D97E9715E685AF007265AF /* FNSSecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D97E9515E685AF007265AF /* FNSSecondViewController_iPad.xib */; };
+		94D97E9F15E685AF007265AF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E9E15E685AF007265AF /* SenTestingKit.framework */; };
+		94D97EA015E685AF007265AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6C15E685AF007265AF /* UIKit.framework */; };
+		94D97EA115E685AF007265AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D97E6E15E685AF007265AF /* Foundation.framework */; };
+		94D97EA915E685AF007265AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D97EA715E685AF007265AF /* InfoPlist.strings */; };
+		94D97EAC15E685AF007265AF /* fencesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D97EAB15E685AF007265AF /* fencesterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94D97EA215E685AF007265AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94D97E5F15E685AF007265AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94D97E6715E685AF007265AF;
+			remoteInfo = fencester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94D97E6815E685AF007265AF /* fencester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fencester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D97E6C15E685AF007265AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94D97E6E15E685AF007265AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94D97E7015E685AF007265AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94D97E7415E685AF007265AF /* fencester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "fencester-Info.plist"; sourceTree = "<group>"; };
+		94D97E7615E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D97E7815E685AF007265AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94D97E7A15E685AF007265AF /* fencester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fencester-Prefix.pch"; sourceTree = "<group>"; };
+		94D97E7B15E685AF007265AF /* FNSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNSAppDelegate.h; sourceTree = "<group>"; };
+		94D97E7C15E685AF007265AF /* FNSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNSAppDelegate.m; sourceTree = "<group>"; };
+		94D97E7E15E685AF007265AF /* FNSFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNSFirstViewController.h; sourceTree = "<group>"; };
+		94D97E7F15E685AF007265AF /* FNSFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNSFirstViewController.m; sourceTree = "<group>"; };
+		94D97E8115E685AF007265AF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		94D97E8315E685AF007265AF /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		94D97E8515E685AF007265AF /* FNSSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNSSecondViewController.h; sourceTree = "<group>"; };
+		94D97E8615E685AF007265AF /* FNSSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNSSecondViewController.m; sourceTree = "<group>"; };
+		94D97E8815E685AF007265AF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		94D97E8A15E685AF007265AF /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		94D97E8D15E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FNSFirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		94D97E9015E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FNSFirstViewController_iPad.xib; sourceTree = "<group>"; };
+		94D97E9315E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FNSSecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		94D97E9615E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FNSSecondViewController_iPad.xib; sourceTree = "<group>"; };
+		94D97E9D15E685AF007265AF /* fencesterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fencesterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D97E9E15E685AF007265AF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		94D97EA615E685AF007265AF /* fencesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "fencesterTests-Info.plist"; sourceTree = "<group>"; };
+		94D97EA815E685AF007265AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D97EAA15E685AF007265AF /* fencesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fencesterTests.h; sourceTree = "<group>"; };
+		94D97EAB15E685AF007265AF /* fencesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fencesterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94D97E6515E685AF007265AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97E6D15E685AF007265AF /* UIKit.framework in Frameworks */,
+				94D97E6F15E685AF007265AF /* Foundation.framework in Frameworks */,
+				94D97E7115E685AF007265AF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D97E9915E685AF007265AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97E9F15E685AF007265AF /* SenTestingKit.framework in Frameworks */,
+				94D97EA015E685AF007265AF /* UIKit.framework in Frameworks */,
+				94D97EA115E685AF007265AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94D97E5D15E685AF007265AF = {
+			isa = PBXGroup;
+			children = (
+				94D97E7215E685AF007265AF /* fencester */,
+				94D97EA415E685AF007265AF /* fencesterTests */,
+				94D97E6B15E685AF007265AF /* Frameworks */,
+				94D97E6915E685AF007265AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94D97E6915E685AF007265AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94D97E6815E685AF007265AF /* fencester.app */,
+				94D97E9D15E685AF007265AF /* fencesterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94D97E6B15E685AF007265AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94D97E6C15E685AF007265AF /* UIKit.framework */,
+				94D97E6E15E685AF007265AF /* Foundation.framework */,
+				94D97E7015E685AF007265AF /* CoreGraphics.framework */,
+				94D97E9E15E685AF007265AF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94D97E7215E685AF007265AF /* fencester */ = {
+			isa = PBXGroup;
+			children = (
+				94D97E7B15E685AF007265AF /* FNSAppDelegate.h */,
+				94D97E7C15E685AF007265AF /* FNSAppDelegate.m */,
+				94D97E7E15E685AF007265AF /* FNSFirstViewController.h */,
+				94D97E7F15E685AF007265AF /* FNSFirstViewController.m */,
+				94D97E8115E685AF007265AF /* first.png */,
+				94D97E8315E685AF007265AF /* first@2x.png */,
+				94D97E8515E685AF007265AF /* FNSSecondViewController.h */,
+				94D97E8615E685AF007265AF /* FNSSecondViewController.m */,
+				94D97E8815E685AF007265AF /* second.png */,
+				94D97E8A15E685AF007265AF /* second@2x.png */,
+				94D97E8C15E685AF007265AF /* FNSFirstViewController_iPhone.xib */,
+				94D97E8F15E685AF007265AF /* FNSFirstViewController_iPad.xib */,
+				94D97E9215E685AF007265AF /* FNSSecondViewController_iPhone.xib */,
+				94D97E9515E685AF007265AF /* FNSSecondViewController_iPad.xib */,
+				94D97E7315E685AF007265AF /* Supporting Files */,
+			);
+			path = fencester;
+			sourceTree = "<group>";
+		};
+		94D97E7315E685AF007265AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D97E7415E685AF007265AF /* fencester-Info.plist */,
+				94D97E7515E685AF007265AF /* InfoPlist.strings */,
+				94D97E7815E685AF007265AF /* main.m */,
+				94D97E7A15E685AF007265AF /* fencester-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94D97EA415E685AF007265AF /* fencesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				94D97EAA15E685AF007265AF /* fencesterTests.h */,
+				94D97EAB15E685AF007265AF /* fencesterTests.m */,
+				94D97EA515E685AF007265AF /* Supporting Files */,
+			);
+			path = fencesterTests;
+			sourceTree = "<group>";
+		};
+		94D97EA515E685AF007265AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D97EA615E685AF007265AF /* fencesterTests-Info.plist */,
+				94D97EA715E685AF007265AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94D97E6715E685AF007265AF /* fencester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D97EAF15E685AF007265AF /* Build configuration list for PBXNativeTarget "fencester" */;
+			buildPhases = (
+				94D97E6415E685AF007265AF /* Sources */,
+				94D97E6515E685AF007265AF /* Frameworks */,
+				94D97E6615E685AF007265AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fencester;
+			productName = fencester;
+			productReference = 94D97E6815E685AF007265AF /* fencester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94D97E9C15E685AF007265AF /* fencesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D97EB215E685AF007265AF /* Build configuration list for PBXNativeTarget "fencesterTests" */;
+			buildPhases = (
+				94D97E9815E685AF007265AF /* Sources */,
+				94D97E9915E685AF007265AF /* Frameworks */,
+				94D97E9A15E685AF007265AF /* Resources */,
+				94D97E9B15E685AF007265AF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94D97EA315E685AF007265AF /* PBXTargetDependency */,
+			);
+			name = fencesterTests;
+			productName = fencesterTests;
+			productReference = 94D97E9D15E685AF007265AF /* fencesterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94D97E5F15E685AF007265AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FNS;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = hackday;
+			};
+			buildConfigurationList = 94D97E6215E685AF007265AF /* Build configuration list for PBXProject "fencester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94D97E5D15E685AF007265AF;
+			productRefGroup = 94D97E6915E685AF007265AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94D97E6715E685AF007265AF /* fencester */,
+				94D97E9C15E685AF007265AF /* fencesterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94D97E6615E685AF007265AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97E7715E685AF007265AF /* InfoPlist.strings in Resources */,
+				94D97E8215E685AF007265AF /* first.png in Resources */,
+				94D97E8415E685AF007265AF /* first@2x.png in Resources */,
+				94D97E8915E685AF007265AF /* second.png in Resources */,
+				94D97E8B15E685AF007265AF /* second@2x.png in Resources */,
+				94D97E8E15E685AF007265AF /* FNSFirstViewController_iPhone.xib in Resources */,
+				94D97E9115E685AF007265AF /* FNSFirstViewController_iPad.xib in Resources */,
+				94D97E9415E685AF007265AF /* FNSSecondViewController_iPhone.xib in Resources */,
+				94D97E9715E685AF007265AF /* FNSSecondViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D97E9A15E685AF007265AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97EA915E685AF007265AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94D97E9B15E685AF007265AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94D97E6415E685AF007265AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97E7915E685AF007265AF /* main.m in Sources */,
+				94D97E7D15E685AF007265AF /* FNSAppDelegate.m in Sources */,
+				94D97E8015E685AF007265AF /* FNSFirstViewController.m in Sources */,
+				94D97E8715E685AF007265AF /* FNSSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D97E9815E685AF007265AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D97EAC15E685AF007265AF /* fencesterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94D97EA315E685AF007265AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94D97E6715E685AF007265AF /* fencester */;
+			targetProxy = 94D97EA215E685AF007265AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94D97E7515E685AF007265AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97E7615E685AF007265AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94D97E8C15E685AF007265AF /* FNSFirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97E8D15E685AF007265AF /* en */,
+			);
+			name = FNSFirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		94D97E8F15E685AF007265AF /* FNSFirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97E9015E685AF007265AF /* en */,
+			);
+			name = FNSFirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		94D97E9215E685AF007265AF /* FNSSecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97E9315E685AF007265AF /* en */,
+			);
+			name = FNSSecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		94D97E9515E685AF007265AF /* FNSSecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97E9615E685AF007265AF /* en */,
+			);
+			name = FNSSecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		94D97EA715E685AF007265AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D97EA815E685AF007265AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94D97EAD15E685AF007265AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94D97EAE15E685AF007265AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94D97EB015E685AF007265AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
+				INFOPLIST_FILE = "fencester/fencester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94D97EB115E685AF007265AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
+				INFOPLIST_FILE = "fencester/fencester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94D97EB315E685AF007265AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/fencester.app/fencester";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
+				INFOPLIST_FILE = "fencesterTests/fencesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		94D97EB415E685AF007265AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/fencester.app/fencester";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fencester/fencester-Prefix.pch";
+				INFOPLIST_FILE = "fencesterTests/fencesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94D97E6215E685AF007265AF /* Build configuration list for PBXProject "fencester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D97EAD15E685AF007265AF /* Debug */,
+				94D97EAE15E685AF007265AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D97EAF15E685AF007265AF /* Build configuration list for PBXNativeTarget "fencester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D97EB015E685AF007265AF /* Debug */,
+				94D97EB115E685AF007265AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		94D97EB215E685AF007265AF /* Build configuration list for PBXNativeTarget "fencesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D97EB315E685AF007265AF /* Debug */,
+				94D97EB415E685AF007265AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94D97E5F15E685AF007265AF /* Project object */;
+}
